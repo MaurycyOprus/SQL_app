@@ -1,0 +1,109 @@
+--CREATE OR REPLACE TRIGGER StworzID_prac
+--    BEFORE INSERT ON pracownik
+--    FOR EACH ROW
+--    WHEN(NEW.id_pracownika IS NULL)
+--BEGIN
+--    :NEW.id_pracownika := NUMER_PRACOWNIKA.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_atr
+--    BEFORE INSERT ON atrakcje
+--    FOR EACH ROW
+--    WHEN(NEW.id_atrakcji IS NULL)
+--BEGIN
+--    :NEW.id_atrakcji := NUMER_ATRAKCJI.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_nr_miejsca_park
+--    BEFORE INSERT ON miejsce_parkingowe
+--    FOR EACH ROW
+--    WHEN(NEW.nr_miejsca IS NULL)
+--BEGIN
+--    :NEW.nr_miejsca := NUMER_MIEJSCA_PARKINGOWEGO.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_nr_pokoju
+--    BEFORE INSERT ON pokoj
+--    FOR EACH ROW
+--    WHEN(NEW.nr_pokoju IS NULL)
+--BEGIN
+--    :NEW.nr_pokoju := NUMER_POKOJU.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_rezerwacja
+--    BEFORE INSERT ON rezerwacja
+--    FOR EACH ROW
+--    WHEN(NEW.id_rezerwacji IS NULL)
+--BEGIN
+--    :NEW.id_rezerwacji := NUMER_REZERWACJI.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_rachunku
+--    BEFORE INSERT ON rachunek
+--    FOR EACH ROW
+--    WHEN(NEW.id_rachunku IS NULL)
+--BEGIN
+--    :NEW.id_rachunku := NUMER_RACHUNKU.nextval();
+--END;
+
+--CREATE OR REPLACE TRIGGER StworzID_klienta
+--    BEFORE INSERT ON klient
+--    FOR EACH ROW
+--    WHEN(NEW.id_klienta IS NULL)
+--BEGIN
+--    :NEW.id_klienta := NUMER_KLIENTA.nextval();
+--END;
+
+--CREATE SEQUENCE numer_atrakcji
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_miejsca_parkingowego
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_pokoju
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_rezerwacji
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_rachunku
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_pracownika
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+--CREATE SEQUENCE numer_klienta
+--minvalue 1
+--maxvalue 99
+--start with 1
+--increment by 1;
+--
+create or replace FUNCTION policz_pracownikow return number is
+result number;
+begin
+    select count(*) into result from pracownik;
+end policz_pracownikow;
+
+--CREATE OR REPLACE PROCEDURE dodaj_pracownika (p_imie in varchar, p_nazwisko in varchar, p_stanowisko in varchar) is
+--begin
+--	insert into pracownik (imie, nazwisko, stanowisko)
+--	values (p_imie, p_nazwisko, p_stanowisko);
+--end dodaj_pracownika;
