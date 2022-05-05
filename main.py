@@ -4,7 +4,7 @@ import cx_Oracle
 import datetime
 from tkinter import messagebox
 cx_Oracle.init_oracle_client(lib_dir=r"C:\Users\MaurycyOprus\Desktop\instantclient-basic-windows.x64-21.3.0.0.0\instantclient_21_3")
-connection = cx_Oracle.connect(user="INF145207", password="Solar231",
+connection = cx_Oracle.connect(user="*******", password="*******",
                                dsn="admlab2.cs.put.poznan.pl/dblab02_students.cs.put.poznan.pl",
                                encoding="UTF-8")
 cur = connection.cursor()
